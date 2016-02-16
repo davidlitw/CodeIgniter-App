@@ -1,0 +1,54 @@
+{
+    "name": "Codeigniter-App",
+    "description": "Codeigniter-App",
+    "keywords": ["codeigniter"],
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.6.0",
+        "codeigniter/framework": "~3.0",
+        "laravel/envoy": "~1.0.0",
+        "php-activerecord/php-activerecord": "~1.0",
+        "codeigniter-restserver": "2.7.2",
+        "codeigniter-cache": "2.0.0",
+        "CodeIgniter-i18n": "dev-master"
+    },
+   "repositories": [
+        {
+            "type": "package",
+            "package": {
+                "name": "codeigniter-restserver",
+                "version": "2.7.2",
+                "source": {
+                    "url": "https://github.com/chriskacerguis/codeigniter-restserver",
+                    "type": "git",
+                    "reference": "2.7.2"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "codeigniter-cache",
+                "version": "2.0.0",
+                "source": {
+                    "url": "https://github.com/benedmunds/codeigniter-cache",
+                    "type": "git",
+                    "reference": "2.0.0"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "CodeIgniter-i18n",
+                "version": "dev-master",
+                "source": {
+                    "url": "https://github.com/appleboy/CodeIgniter-i18n",
+                    "type": "git",
+                    "reference": "master"
+                }
+            }
+        }
+    ]
+}
