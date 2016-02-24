@@ -10,12 +10,10 @@ sed -i.bak "s/$application_folder\= 'application';/$application_folder\= '..\/ap
 sed -i.bak "s/$config['composer_autoload']\= FALSE;/$config['composer_autoload']\= TRUE;/" app/config/config.php && rm app/config/config.php.bak
 
 # Setting Session
-mkdir app/sessions
-sed -i.bak "s/$config['sess_save_path']\= NULL;/$config['sess_save_path']\= '../app/sessions';/" app/config/config.php && rm app/config/config.php.bak
+sed -i.bak "s/$config['sess_save_path']\= NULL;/$config['sess_save_path']\= '../storage/sessions';/" app/config/config.php && rm app/config/config.php.bak
 
 # Setting Cookie
-mkdir app/cookies
-sed -i.bak "s/$config['cookie_path']\= '/';/$config['cookie_path']\= '../app/cookies';/" app/config/config.php && rm app/config/config.php.bak
+sed -i.bak "s/$config['cookie_path']\= '/';/$config['cookie_path']\= '../storage/cookies';/" app/config/config.php && rm app/config/config.php.bak
 
 # Install codeigniter-cache
 cp vendor/codeigniter-cache/config/cache.php app/config/
