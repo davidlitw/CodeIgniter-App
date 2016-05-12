@@ -5,15 +5,15 @@ cp -r vendor/codeigniter/framework/application app
 
 # Setting Index Path
 cp vendor/codeigniter/framework/index.php public/
-sed -i.bak "s/$system_path\= 'system';/$system_path\= '..\/vendor\/codeigniter\/framework\/system';/" public/index.php && rm public/index.php.bak
-sed -i.bak "s/$application_folder\= 'application';/$application_folder\= '..\/app';/" public/index.php && rm public/index.php.bak
-sed -i.bak "s/$config['composer_autoload']\= FALSE;/$config['composer_autoload']\= TRUE;/" app/config/config.php && rm app/config/config.php.bak
+sed -i.bak "s/$system_path\= 'system';/$system_path = '..\/vendor\/codeigniter\/framework\/system';/" public/index.php && rm public/index.php.bak
+sed -i.bak "s/$application_folder\= 'application';/$application_folder = '..\/app';/" public/index.php && rm public/index.php.bak
 
+# Setting Composer
+sed -i.bak "s/$config\['composer_autoload'\][^=]*= FALSE;/$config\['composer_autoload'\] = '..\/vendor\/autoload.php';/g" app/config/config.php && rm app/config/config.php.bak
 # Setting Session
-sed -i.bak "s/$config['sess_save_path']\= NULL;/$config['sess_save_path']\= '../storage/sessions';/" app/config/config.php && rm app/config/config.php.bak
-
+sed -i.bak "s/$config\['sess_save_path'\][^=]*= NULL;/$config\['sess_save_path'\] = '..\/storage\/sessions';/" app/config/config.php && rm app/config/config.php.bak
 # Setting Cookie
-sed -i.bak "s/$config['cookie_path']\= '/';/$config['cookie_path']\= '../storage/cookies';/" app/config/config.php && rm app/config/config.php.bak
+sed -i.bak "s/$config\['cookie_path'\][^=]*= '\/';/$config\['cookie_path'\] = '..\/storage\/cookies';/" app/config/config.php && rm app/config/config.php.bak
 
 # Install codeigniter-cache
 cp vendor/codeigniter-cache/config/cache.php app/config/
